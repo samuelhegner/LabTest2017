@@ -2,14 +2,20 @@ void setup()
 {
   size(500, 500);
   bee = new Bee();
+  for(int i = 0; i<=4; i++)
+  {
+    objects.add(new Cloud(random(0, 255), random(0, 100)));
+  }
   
   objects.add(bee);
+
 }
 
 
 ArrayList<GameObject> objects = new ArrayList<GameObject>();
 
 Bee bee;
+
 
 void draw()
 {
