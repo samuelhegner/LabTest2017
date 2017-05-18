@@ -23,13 +23,13 @@ class Tree
 
   void render()
   {
-    stroke(255);
+    stroke(139, 69, 19);
     line(pos.x, pos.y, start.x, start.y);
     
     pushMatrix();
     translate(pos.x, pos.y);
-    noStroke();
     fill(tree);
+    stroke(100);
     ellipse(0, 0, radius*2, radius*2);
     for(int i = 0; i < leaf; i ++)
     {
