@@ -1,10 +1,13 @@
 void setup()
 {
   size(500, 500);
+  bee = new Bee();
 }
 
 ArrayList<Bird> birds = new ArrayList<Bird>();
 ArrayList<Tree> trees = new ArrayList<Tree>();
+
+Bee bee;
 
 void draw()
 {
@@ -26,6 +29,9 @@ void draw()
     b.update();
     b.render();
   }
+  
+  bee.update();
+  bee.render();
   println(birds.size());
 }
 

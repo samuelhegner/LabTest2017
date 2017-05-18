@@ -13,7 +13,7 @@ class Tree
   {
     pos = new PVector(x, y);
     speed = 2;
-    leaf =(int) random(3, 8);
+    leaf =(int) random(3, 9);
     start = new PVector(pos.x, pos.y);
     radius = 10;
     treeH = random(50, 100);
