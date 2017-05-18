@@ -30,7 +30,7 @@ class Bird
    noStroke();
    fill(255, 0, 0);
    ellipse(0, 0, radius*2, radius*2);
-   ellipse(radius*rightMult, 0, radius, radius);
+   ellipse(radius*1.5*rightMult, 0, radius, radius);
    popMatrix();
   }
   

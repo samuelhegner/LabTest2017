@@ -4,6 +4,7 @@ void setup()
 }
 
 ArrayList<Bird> birds = new ArrayList<Bird>();
+ArrayList<Tree> trees = new ArrayList<Tree>();
 
 void draw()
 {
@@ -14,9 +15,17 @@ void draw()
     a.update();
     a.render();
   }
+  for(int i = trees.size() -1; i >= 0; i--)
+  {
+    Tree b = trees.get(i);
+    b.update();
+    b.render();
+  }
+  println(birds.size());
 }
 
 void mouseClicked()
 {
   birds.add(new Bird(mouseX, mouseY));
+  trees.add(new Tree(mouseX, mouseY));
 }
