@@ -7,6 +7,7 @@ class Tree
   float radius;
   float treeH;
   color tree;
+  float thetaInc;
 
   Tree(float x, float y)
   {
