@@ -1,21 +1,16 @@
-class Tree
+class Tree extends GameObject
 {
-  PVector pos;
-  float speed;
   int leaf;
   PVector start;
-  float radius;
   float treeH;
   color tree;
   float thetaInc;
 
   Tree(float x, float y)
   {
-    pos = new PVector(x, y);
-    speed = 2;
+    super(x, y, 10, 2);
     leaf =(int) random(3, 9);
     start = new PVector(pos.x, pos.y);
-    radius = 10;
     treeH = random(50, 100);
     tree = color(random(0, 255), random(0, 255), random(0, 255));
     thetaInc = TWO_PI/leaf;
@@ -23,7 +18,7 @@ class Tree
 
   void render()
   {
-    stroke(139, 69, 19);
+    stroke(139, 69, 19, 200);
     line(pos.x, pos.y, start.x, start.y);
     
     pushMatrix();
@@ -31,6 +26,7 @@ class Tree
     fill(tree);
     stroke(100);
     ellipse(0, 0, radius*2, radius*2);
+    
     for(int i = 0; i < leaf; i ++)
     {
       float theta = i * thetaInc;

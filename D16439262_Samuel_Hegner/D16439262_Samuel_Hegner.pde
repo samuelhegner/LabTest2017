@@ -2,10 +2,12 @@ void setup()
 {
   size(500, 500);
   bee = new Bee();
+  
+  objects.add(bee);
 }
 
-ArrayList<Bird> birds = new ArrayList<Bird>();
-ArrayList<Tree> trees = new ArrayList<Tree>();
+
+ArrayList<GameObject> objects = new ArrayList<GameObject>();
 
 Bee bee;
 
@@ -17,33 +19,25 @@ void draw()
   rect(0, 0, width, height/2);
   fill(50, 205, 50);
   rect(0, height/2, width, height/2);
-  for(int i = birds.size() -1; i >= 0; i--)
+  for(int i = objects.size() -1; i >= 0; i--)
   {
-    Bird a = birds.get(i);
-    a.update();
-    a.render();
-  }
-  for(int i = trees.size() -1; i >= 0; i--)
-  {
-    Tree b = trees.get(i);
-    b.update();
-    b.render();
+    GameObject obj = objects.get(i);
+    obj.update();
+    obj.render();
   }
   
-  bee.update();
-  bee.render();
-  println(birds.size());
+  println(objects.size());
 }
 
 void mouseClicked()
 {
   if(mouseY>=height/2)
   {
-    trees.add(new Tree(mouseX, mouseY));
+    objects.add(new Tree(mouseX, mouseY));
   }
   else
   {
-    birds.add(new Bird(mouseX, mouseY));
+    objects.add(new Bird(mouseX, mouseY));
   }
   
   

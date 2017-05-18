@@ -1,17 +1,11 @@
-class Bee
+class Bee extends GameObject
 {
-  PVector pos;
   PVector forward;
-  float radius;
-  float speed;
   float rightMult;
 
   Bee()
   {
-    pos = new PVector(width/2, height/2);
-    speed = 0.4;
-    radius = 5;
-    rightMult = 1;
+    super(width/2, height/2, 5, 0.4);
   }
 
   void render()
